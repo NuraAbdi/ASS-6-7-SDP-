@@ -1,7 +1,6 @@
 package builder;
 
 import model.User;
-import strategy.NotificationFactory;
 import strategy.NotificationStrategy;
 
 public class UserBuilder {
@@ -11,7 +10,7 @@ public class UserBuilder {
 
     public UserBuilder setUsername(String username) {
         this.username = username;
-        return this;эп
+        return this;
     }
 
     public UserBuilder setPassword(String password) {
@@ -19,14 +18,12 @@ public class UserBuilder {
         return this;
     }
 
-    public UserBuilder setNotificationStrategy(NotificationStrategy strategy) {
+    public UserBuilder setStrategy(NotificationStrategy strategy) {
         this.strategy = strategy;
         return this;
     }
 
     public User build() {
-        // defaults
-        if (strategy == null) strategy = NotificationFactory.create("email");
         return new User(username, password, strategy);
     }
 }
