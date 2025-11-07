@@ -1,7 +1,7 @@
-package notifications;
+package strategy;
 
-import news.News;
-import users.User;
+import model.News;
+import model.User;
 
 public interface NotificationStrategy {
     void send(User user, News news);
